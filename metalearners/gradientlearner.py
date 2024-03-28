@@ -217,6 +217,7 @@ class GBML:
         meta_loss = self._get_meta_loss(x_hat, x)
         meta_loss.backward()
         
+        self.opt.step() #NOTE temporary for testing both gd and ours
         finished_flag = self.c.max_min_dist_step(k=k)
         # finished_flag = False #comment line above and uncomment next two lines for gumbel-LOUPE
         # self.opt.step() 

@@ -59,7 +59,7 @@ mask:
 opt:
   num_iters: -1 #number of meta iterations to run
   optimizer: 'adam' #[adam, sgd]
-  lr: 0.001 #meta learning rate
+  lr: 0.01 #meta learning rate
 
   k: 1
 
@@ -68,3 +68,4 @@ opt:
 
   val_iters: 100000 #validate every n iterations
   checkpoint_iters: 20 #checkpoint every n iterations
+  
