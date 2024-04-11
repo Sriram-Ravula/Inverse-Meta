@@ -39,8 +39,8 @@ data:
  num_test:  100
 
  train_batch_size: 20
- val_batch_size:   10
- test_batch_size:  10
+ val_batch_size:   5
+ test_batch_size:  5
 
  image_size: 320
  num_channels: 2
@@ -50,8 +50,8 @@ data:
 mask:
  meta_loss_type: 'l2' #["l2"]
 
- sample_pattern: "3D_circle"
- R: 20
+ sample_pattern: "3D"
+ R: 2
  tau: 1.0
  num_acs_lines: 16
  mask_init: "uniform"

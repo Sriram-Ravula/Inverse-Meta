@@ -407,17 +407,17 @@ class GBML:
         # config = {'likelihood_step_size': 10.0,
         #           'normalize_grad': True}
         
-        #Brains
-        alg_type = "dps"
-        S_churn=0.
-        config = {'likelihood_step_size': 10.0,
-                  'normalize_grad': True}
-        
-        ##Knees
+        # #Brains
         # alg_type = "dps"
         # S_churn=0.
-        # config = {'likelihood_step_size': 5.0,
+        # config = {'likelihood_step_size': 10.0,
         #           'normalize_grad': True}
+        
+        #Knees
+        alg_type = "dps"
+        S_churn=0.
+        config = {'likelihood_step_size': 5.0,
+                  'normalize_grad': True}
         
         ##Brains and Knees
         # alg_type = "cg"
@@ -563,11 +563,11 @@ class GBML:
         test_dataset = split_dict['test']
 
         self.train_loader = DataLoader(train_dataset, batch_size=self.hparams.data.train_batch_size, shuffle=True,
-                                num_workers=0, drop_last=True)
+                                num_workers=16, drop_last=True)
         self.val_loader = DataLoader(val_dataset, batch_size=self.hparams.data.val_batch_size, shuffle=False,
-                                num_workers=1, drop_last=True)
+                                num_workers=16, drop_last=True)
         self.test_loader = DataLoader(test_dataset, batch_size=self.hparams.data.test_batch_size, shuffle=False,
-                                num_workers=1, drop_last=True)
+                                num_workers=16, drop_last=True)
 
     def _init_c(self):
         num_acs_lines = getattr(self.hparams.mask, 'num_acs_lines', 20)
